@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="トミカ製品情報を検索できる一般公開用データベース">
+  <title>tomicaDB - トミカ製品情報</title>
+  <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body>
+<header class="site-header"><div class="site-header__inner">
+  <a class="site-title" href="./">tomicaDB</a>
+  <p>個人所有のトミカをデータベース化中です</p>
+</div></header>
+<main class="container">
+<section class="hero card">
+  <div>
+    <h1>トミカ製品を検索</h1>
+    <p>シリーズ、製品番号、製品名、メーカー、カテゴリ、ギミック、実車情報などから検索できます。</p>
+  </div>
+  <p class="catalog-count"><strong id="catalog-count">―</strong><span>登録製品</span></p>
+</section>
+
+<section class="card">
+  <form id="search-form" class="search-form" novalidate>
+    <div class="field">
+      <label for="q">フリーワード</label>
+      <input id="q" name="q" type="search" maxlength="200" placeholder="製品名・メーカー名・ギミックなど">
+    </div>
+    <div class="field">
+      <label for="product_number">製品番号（前方一致）</label>
+      <input id="product_number" name="product_number" type="search" placeholder="例：026、026-08、第58弾">
+    </div>
+    <div class="field">
+      <label for="series_id">シリーズ名</label>
+      <select id="series_id" name="series_id"><option value="">すべてのシリーズ</option></select>
+    </div>
+    <div class="field field--button"><button class="button button--primary" type="submit">検索</button></div>
+    <div class="field">
+      <label for="subseries">サブシリーズ</label>
+      <select id="subseries" name="subseries" disabled><option value="">シリーズを選択すると利用できます</option></select>
+    </div>
+    <div class="field">
+      <label for="no_range">No.指定範囲</label>
+      <select id="no_range" name="no_range" disabled><option value="">シリーズを選択すると利用できます</option></select>
+    </div>
+    <div class="field field--button"><button id="reset-button" class="button" type="button">条件リセット</button></div>
+  </form>
+  <p id="form-error" class="error" role="alert" hidden></p>
+</section>
+
+<section class="card" aria-live="polite">
+  <div class="result-header">
+    <div><h2 id="result-heading">すべてのシリーズの検索結果</h2><p id="result-summary" class="summary">データを読み込んでいます。</p></div>
+  </div>
+  <nav id="pager-top" class="pager" aria-label="検索結果上部のページ移動"></nav>
+  <div id="product-list" class="product-list"></div>
+  <nav id="pager-bottom" class="pager" aria-label="検索結果下部のページ移動"></nav>
+  <noscript><p class="error">検索機能を利用するにはJavaScriptを有効にしてください。</p></noscript>
+</section><p class="build-time">公開データ更新日時：2026-09-19T10:00:16Z</p>
+</main>
+<footer class="site-footer"><p>個人作成の製品情報データベースです。メーカー公式サイトではありません。</p></footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

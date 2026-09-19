@@ -1,2 +1,3 @@
 # tomica-public
-Public static website for the Tomica database
+
+tomicaDBの一般公開用静的サイトです。
